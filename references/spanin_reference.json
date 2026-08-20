@@ -1,0 +1,212 @@
+[
+  {
+    "uniprot_id": "Q37935",
+    "name": "Q37935 SPAN2_LAMBD Spanin, outer lipoprotein subunit OS=Escherichia phage lambda OX=2681611 GN=Rz1 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MLKLKMMLCVMMLPLVVVGCTSKQSVSQCVKPPPPPAWIMQPPPDWQTPLNGIISPSERG",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A8CGF6",
+    "name": "A8CGF6 SPAN2_BPP22 Probable spanin, outer lipoprotein subunit OS=Salmonella phage P22 OX=10754 GN=Rz1 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MLTRLSKLSALMFLLGVSACKSPPPVQSQRPEPAAWAMEKAQDLQQMLNSIITVSEVESTG",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q9XJJ7",
+    "name": "Q9XJJ7 SPAN2_BP933 Spanin, outer membrane subunit OS=Escherichia phage 933W OX=10730 GN=Rz1 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MRELKMKLCVLMLPLVVSACGSTPPAPVPCVKPPAPPAWIMQPAPDWQTPLNGIISSSERG",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P0DOK7",
+    "name": "P0DOK7 SPAN2_BPP21 Spanin, outer lipoprotein subunit OS=Enterobacteria phage P21 OX=10711 GN=Rz1 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MRKLKMMLCVMMLPLVVVGCTSKQSVSQCVKPRLPPAWIMQPPPDFTWQTPLNGIISPSERG",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P10438",
+    "name": "P10438 SPAN1_BPPA2 Spanin, inner membrane subunit (Fragment) OS=Enterobacteria phage PA-2 OX=10738 GN=Rz PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MSRVTAIISALIICIIISLSWAVNHYRDNAIAYKAQRDKNARELKLANAAITDMQMRQRDVAAL",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P03788",
+    "name": "P03788 SPAN2_BPT7 Spanin, outer lipoprotein subunit OS=Escherichia phage T7 OX=10760 GN=18.7 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MSTLRELRLRRALKEQSMRYLLSIKKTLPRWKGALIGLFLICVATISGCASESKLPEPPMVSVDSSLMVEPNLTTEMLNVFSQ",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P10302",
+    "name": "P10302 SPAN2_BPT3 Spanin, outer lipoprotein subunit OS=Enterobacteria phage T3 OX=10759 GN=18.7 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MSTLRELRLRRALKEQSMKYRLSIKKTLPRWKGALIGLFLICVRTISGSGSESNLPEPPKVSVDSSLMIEPNLTTEMLNVFSQ",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P0DJZ3",
+    "name": "P0DJZ3 SPAN2_BPKMV Probable spanin, outer lipoprotein subunit OS=Pseudomonas phage phiKMV OX=204270 GN=46.1 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MPPCSATSRRSLPGPTPSARRWTVPWTRTARGLTGLCLLLSLTACATAPAPAVLCEHPLIDPTTQAGLIRAVAAYQDALDLCNALNQGD",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q8LTD0",
+    "name": "Q8LTD0 SPAN2_BPP2 Probable spanin, outer lipoprotein subunit OS=Escherichia phage P2 OX=2905681 GN=lysC PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MRTKIFAAGTVLTCLMLCAGCTSAPPAPTPVIVPNACPKVSLCPMPGSDPQTNGDLSADIRQLENALARCASQVKMIKHCQDENDAQTRQPAQGAD",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P39503",
+    "name": "P39503 SPAN2_BPT4 Spanin, outer lipoprotein subunit OS=Enterobacteria phage T4 OX=10665 GN=y13J PE=3 SV=3",
+    "organism": "custom",
+    "sequence": "MIKLSAVILSIGLLVGCSTKPLEVKKETVHPNWPVQIKSYDEAKLSWQVKVIDGKAWVGMPFEDSQEFRIWLNDVKRYVHDQKTMXCYYRQELKEDKCK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q7Y2B9",
+    "name": "Q7Y2B9 SPAN1_BPKMV Probable spanin, inner membrane subunit OS=Pseudomonas phage phiKMV OX=204270 GN=46 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MPRTIVAILVLAVVALGASYGFVQSYRALGIAQGEIKRQTARAEALEVRYATLQRHVKEVAARTNTQRQEVDRALDQNRPWADRPVPAAVVDSLCNRPGARCAVRTPTD",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P0DTL7",
+    "name": "P0DTL7 SPAN2_BPMU Spanin, outer lipoprotein subunit OS=Escherichia phage Mu OX=2681603 GN=Mup23.1 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MMQKKKLQPPLLVTIAALVLCLPLLLTGCGNSKNAPVPSVVILPEIDTELTEATPVPPMPQPLTWGASLLWNADLLMALGQCNRDKASVREQEIRRKEIYERRPEPGGGAAAR",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P39504",
+    "name": "P39504 SPAN1_BPT4 Spanin, inner membrane subunit OS=Enterobacteria phage T4 OX=10665 GN=y13K PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MHVSNFTAGLLLLVIAFGGTSIILKHKVERLETSVTEITKTANENALALNNLRIQYNYIDAMNNKNREAIAAIERENEKLRKDAKKADVVAHKPGLVEKQINNSFNKFAEDIQDLSK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q9T1X1",
+    "name": "Q9T1X1 SPAN1_BPMU Spanin, inner membrane subunit OS=Escherichia phage Mu OX=2681603 GN=Mup23 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MTFASKSLLLAAVFTAVLSGGLWHRLDSTRHDNQTLRRELQTEQQARHTAEWLLHGQEQTMQVFSAIRAANRAARLADETEHHDAKEKITTAITGDNCSTRPVPAVAADRLRELEKRTRAIGGDPARN",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q6XQ97",
+    "name": "Q6XQ97 SPANU_BPT1 U-spanin OS=Escherichia phage T1 OX=2492962 GN=11 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MKLKKTCIAITVAVGVISLSGCSTASALSGLLSDSPDVTAQVGAENTKQLAGVTAKADDKREVKVSDSNIGKIDSSVKKSVEVSTIQANTVNAESITVTKSGSWYDPVVCWILVFIVLLLFYFLIRKHEKKEA",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5RNN9|A0A6J5RNN9_9CAUD",
+    "name": "A0A6J5RNN9|A0A6J5RNN9_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP1299_42 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MWTDHYVGIPFEINGRSRSGVDCWGLVCRVYADRLGIILPDKLGIYADNSRGNLEEVALAMGVEKEKWNEVSDPSDYDVVLMRHGPLACHVGVYVRGRVMLHSNYGCDSVVESVDSIYWRNRIVGYYRHDRTKNTLINTP",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P51770",
+    "name": "P51770 SPAN1_BPP2 Probable spanin, inner membrane subunit OS=Escherichia phage P2 OX=2905681 GN=lysB PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MSRLMIVLVVLLSLAVAGLFLVKHKNASLRASLDRANNVASGQQTTITMLKNQLHVALTRADKNELAQVALRQELENAAKREAQREKTITRLLNENEDFRRWYGADLPDAVRRLHQRPACTDASDCPQRMPESEPLPDAGQ",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P03803",
+    "name": "P03803 SPAN1_BPT7 Spanin, inner membrane subunit OS=Escherichia phage T7 OX=10760 GN=18.5 PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MLEFLRKLIPWVLAGMLFGLGWHLGSDSMDAKWKQEVHNEYVKRVEAAKSTQRAIDAVSAKYQEDLAALEGSTDRIISDLRSDNKRLRVRVKTTGTSDGQCGFEPDGRAELDDRDAKRILAVTQKGDAWIRALQDTIRELQRK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P13583",
+    "name": "P13583 SPAN1_BPP22 Spanin, inner membrane subunit OS=Salmonella phage P22 OX=10754 GN=15 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MSRIKAIIASVIICIIVCLSWAVNHYRDNAITYKEQRDKATSIIADMQKRQRDVAELDARYTKELADANATIETLRADVSAGRKRLQVSATCPKSTTGASGMGDGESPRLTADAELNYYRLRSGIDRITAQVNYLQEYIRSQCLK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P10305",
+    "name": "P10305 SPAN1_BPT3 Spanin, inner membrane subunit OS=Enterobacteria phage T3 OX=10759 GN=18.5 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MLEFLRKLIPWVLAGMLFGLGWHLGSDSMDAKWKQEVHNEYVKRVEATASTQRAINEISAKYQEDLAALEGSTDRIISDLRQDNKRLRVRVKPTGTSEGQCGFEPDDRAELDDRDAKRILSVTQKGDAWIRALQDTIRELQRKQEIK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P00726",
+    "name": "P00726 SPAN1_LAMBD Spanin, inner membrane subunit OS=Escherichia phage lambda OX=2681611 GN=Rz PE=1 SV=1",
+    "organism": "custom",
+    "sequence": "MSRVTAIISALVICIIVCLSWAVNHYRDNAITYKAQRDKNARELKLANAAITDMQMRQRDVAALDAKYTKELADAKAENDALRDDVAAGRRRLHIKAVCQSVREATTASGVDNAASPRLADTAERDYFTLRERLITMQKQLEGTQKYINEQCR",
+    "function": ""
+  },
+  {
+    "uniprot_id": "P27358",
+    "name": "P27358 SPAN1_BPP21 Spanin, inner membrane subunit OS=Enterobacteria phage P21 OX=10711 GN=Rz PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MNRVTAIISALVICIIVCLSWAVNHYRDNAITYKAQRDKNARELTLANRVITDIQMRQRDVAALDAKYTKELADAKAENDALRDDVAAGRRRLHIKAVCQSVREATTASGVDNAASPRLADTAERDYFTLRERLITMQKQLEGTQKYINEQCR",
+    "function": ""
+  },
+  {
+    "uniprot_id": "Q9XJJ6",
+    "name": "Q9XJJ6 SPAN1_BP933 Spanin, inner membrane subunit OS=Escherichia phage 933W OX=10730 GN=Rz PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MNRVLCVVIIVLAVGYGALWLATNHYRDNALTYKAQRDKKARELEQANATITDMQVRQRDVAALDAKYSRELADARAENETLRADVAAGRKRLRINATCSGTVREATGTSGVDNATGPRLADTAERDYFILRERLITMQKQLEGTQKYINEQCR",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5M060|A0A6J5M060_9CAUD",
+    "name": "A0A6J5M060|A0A6J5M060_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP331_43 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKLITIPLILFSLLGFSQKQIDSTTEKTIIPNYISGISNDITSRLDTFVNKWKGKPYVYGGLSLKGIDCSGFIQTLYKDVFDILIPRTAYSQYKSSTKISKDEMGVGDLLFFMSRSSPSGWHVAVYLGNNVIMHAANRKRGVVVDQLTSMIKKNIYSVGHFIK",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J7WRD6|A0A6J7WRD6_9CAUD",
+    "name": "A0A6J7WRD6|A0A6J7WRD6_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP110_103 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKYVILASVLLTLAGCSASAAVATTPHVVTKSVAVSKQVLSLDTLRLQMNKSNMQKVITRLKAQVHKTYYVFSGDSPRGWDCSGLVVWTYKQLGLTLPHSATAQAHLGTKVNEPKIGDIVVFGYKGSYYYDHSGIYIGDGKVINANKYYGTTVIEPLSNFKYYSNIRFIRVLPMA",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5LRS5|A0A6J5LRS5_9CAUD",
+    "name": "A0A6J5LRS5|A0A6J5LRS5_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP325_5 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKYAIITSAILILTGCSASVAIATGENTQVATSTTITKVETFSTQQLIKIAKTERNTTKMKKVVKYLKTRVGRTSYVFSGSSPYGWDCSGLVKWTYQRFGLELPHSANKQGHVGTRVSKPKLGDVVVFAYQGSTNFYHSAVYIGNGKIVHAHQQRKTTVIEPLSLYKRSQIRFVRLVPTN",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5TBR2|A0A6J5TBR2_9CAUD",
+    "name": "A0A6J5TBR2|A0A6J5TBR2_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP222_24 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MNKKFAAIGVMALTLTTCSTPSQAYEQKPTVSKVVTAPSFMNSLKELEIKAKISMNTNKLNSAISHLKKYVGKTWYVFSGNTPRGWDCSGLTMWTYEQLGIELKHSASVQKNSGIKHKTPKIGDIVAFGWKGWSGAAHVGIYIGNGKMIHAPSPGHRTMVENIAKFAKYGYSKVTYTRIVQTN",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5KRR6|A0A6J5KRR6_9CAUD",
+    "name": "A0A6J5KRR6|A0A6J5KRR6_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP46_119 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKLIAIGAMALALTTCSSPALGNVTSGLVHQQVKEPVNLLTKAAMEKATLLYSLRLQHNTKKLNTVLRQLKGQIHKTWYVFSGDTPRGWDCSGMTMWAYEQLGVNLEHRASKQKYEGTLVKTPKVGDIVAFTYKGTQSAYHVGIYLGNDEMIHAGGGKGDYTSVVRISKFAGKYSNVSYTRILETI",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5KV34|A0A6J5KV34_9CAUD",
+    "name": "A0A6J5KV34|A0A6J5KV34_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP45_141 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKLIAIGAIALVMTSCASTGVSAVTRTSAVVHQQVERPVNLIQQAVAAKVSFIQTAIETSNTAKVNKVISQLKGQVHKTWYVFSGDTPRGWDCSGMTMWAYGQLGVNLEHRASKQKYEGTLVKTPKFGDIVAFTYKGSQSAYHVGIYLSPDEMIHAGGGKGDYTSIVRISKFAGKYSNVTYTRILQTL",
+    "function": ""
+  },
+  {
+    "uniprot_id": "A0A6J5L392|A0A6J5L392_9CAUD",
+    "name": "A0A6J5L392|A0A6J5L392_9CAUD Outer membrane lipoprotein OS=uncultured Caudovirales phage OX=2100421 GN=UFOVP113_138 PE=3 SV=1",
+    "organism": "custom",
+    "sequence": "MKKIIAISAMALVMTSCSSSASAVETKASAVAVVRVVEPVNFLDKVSHKQLDFVKEVKLRSITNKMESVVHQVKSRVGKTWYVFSGASPSGWDCSGLTYWVYEQLGITIPHSANKQGHLNKGVKDPKVGDIVLFGYKGTSTYYHAALYIGNGKIIHAGFRKGTSTQILNLDDPSFKGSRVKFVRLVETL",
+    "function": ""
+  }
+]

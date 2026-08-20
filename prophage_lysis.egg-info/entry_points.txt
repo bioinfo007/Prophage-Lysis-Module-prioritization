@@ -1,0 +1,2 @@
+[console_scripts]
+prophage_lysis = cli:app

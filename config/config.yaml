@@ -1,0 +1,193 @@
+# =============================================================================
+# prophage_lysis v2.0.0 — Pipeline Configuration
+# =============================================================================
+# Edit paths and parameters to match your system.
+# All paths support absolute or relative (to project root).
+#
+# Usage:
+#   snakemake --configfile config/config.yaml --cores 8
+#   prophage_lysis run --config config/config.yaml
+# =============================================================================
+
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+paths:
+  # Directory containing input phage genome FASTA files
+  # Accepts: .fasta .fa .fna .ffn
+  genome_input_dir: "data/input/phage_genomes"
+
+  # Pharokka database directory (downloaded via install-database.py)
+  pharokka_db: "/home/aqibj/projects/Tools/prophage_lysis_pipeline/DB/pharokka_database"
+
+  # Pfam-A.hmm — must be hmmpress'd before use
+  # Download: https://pfam.xfam.org/  or  wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
+  pfam_hmm: "/home/aqibj/projects/Tools/prophage_lysis_pipeline/DB/pfam_database/Pfam-A.hmm"
+
+  # Working directories
+  intermediate_dir: "data/intermediate"
+  output_dir:       "data/output"
+  log_dir:          "data/output/logs"
+
+  # Resource allocation for Pharokka
+  pharokka_threads: 8
+
+
+# ── Candidate extraction (M01 / M02) ─────────────────────────────────────────
+candidate_extraction:
+  # HMMER e-value cutoff for domain detection
+  hmmer_evalue_threshold: 1.0e-3
+  hmmer_threads: 4
+
+  # Length bounds per track (amino acids)
+  # Endolysins: typical range 80–600 aa
+  min_length_aa_endolysin: 80
+  max_length_aa_endolysin: 600
+
+  # Holins: typically small membrane proteins 50–200 aa
+  min_length_aa_holin: 40
+  max_length_aa_holin: 250
+
+  # Spanins: 40–300 aa depending on type
+  min_length_aa_spanin: 30
+  max_length_aa_spanin: 400
+
+
+# ── Gate 1 — expressibility filter (M03) ─────────────────────────────────────
+gate1:
+  # Endolysin-specific thresholds
+  max_mw_kda:               120.0      # reject very large proteins (aggregation-prone)
+  max_gravy_endolysin:       0.5      # reject highly hydrophobic (membrane-insoluble)
+  max_instability_index:    80.0      # Guruprasad threshold for unstable protein
+  min_cai_score:             0.0     # codon adaptation index (E. coli scale)
+  flags_to_fail:             3        # number of flags to trigger elimination
+
+  # Holin-specific thresholds
+  max_mw_kda_holin:         35.0      # holins are small membrane proteins
+  min_gravy_holin:          -0.3      # holins must be hydrophobic
+  max_tm_helices_holin:      5        # >4 TM = unlikely real holin
+  flags_to_fail_holin:       2
+
+  # Spanin-specific thresholds
+  max_mw_kda_spanin:        60.0
+  flags_to_fail_spanin:      1        # strict — only one flag allowed
+
+
+# ── Clustering (M05) ─────────────────────────────────────────────────────────
+clustering:
+  # UMAP parameters — 50D for HDBSCAN, 2D for visualization
+  umap_n_components:   50
+  umap_n_neighbors:    25
+  umap_min_dist:       0.1
+  umap_2d_min_dist:    0.1
+  umap_metric:         "cosine"
+  umap_random_state:   42
+
+  # HDBSCAN parameters
+  hdbscan_min_cluster_size: 4
+  hdbscan_min_samples:      2
+  hdbscan_metric:           "euclidean"
+
+
+# ── Gate 3 — redundancy collapse (M07) ────────────────────────────────────────
+gate3:
+  # Cosine similarity threshold for redundancy clustering
+  # Proteins > threshold are considered functionally redundant
+  # 0.92 corresponds roughly to ≥85% sequence identity in ESM-2 space
+  similarity_threshold: 0.90
+
+  # How to pick the representative from each redundancy cluster
+  # Options: "composite" (recommended) | "best_expressibility"
+  representative_criterion: "composite"
+
+
+# ── PG chemistry matching (M06) — optional ───────────────────────────────────
+pg_matching:
+  enabled:          false    # set to true to score endolysins against target pathogens
+  enforce_coverage: false    # if true, extend selection until all pathogens covered
+
+
+# ── Target pathogens database ─────────────────────────────────────────────────
+targets:
+  pathogen_db: "targets/pathogen_db.yaml"
+
+
+# ── Selection (M08) ──────────────────────────────────────────────────────────
+selection:
+  # Selection strategy
+  # "saturation"  — stop when diversity curve flattens (recommended)
+  # "fixed"       — always select exactly max_expression_n
+  selection_strategy:  "saturation"
+
+  # Number of candidates to submit for expression
+  min_expression_n:   10      # never fewer than this
+  max_expression_n:   100    # hard ceiling
+
+  # Saturation threshold
+  # Stop when marginal distance < threshold × initial distance
+  # 0.30 = stop when new selection adds <30% of initial inter-candidate diversity
+  saturation_threshold: 0.25
+
+  # BLAST novelty check against SwissProt
+  run_blast_novelty:       true
+  blast_evalue:            1.0e-10
+  blast_identity_threshold: 85.0    # % identity above which = known homolog
+
+  # Pathogen coverage constraint (only used if pg_matching.enforce_coverage: true)
+  min_pathogen_coverage: 2   # minimum endolysins per target pathogen with PG score ≥ 2
+
+
+# ── API settings (M04 embeddings, BLAST) ─────────────────────────────────────
+api:
+  # ESM-2 backend — choose one:
+  #
+  #   "atlas"  (DEFAULT, RECOMMENDED)
+  #     - Uses the ESM Metagenomic Atlas REST API
+  #     - No GPU required, no model download, works on any machine
+  #     - Requires internet connection during M04
+  #     - Free to use
+  #
+  #   "local"
+  #     - Runs ESM-2 650M model locally
+  #     - Requires: pip install torch fair-esm  (~1.5 GB model download on first run)
+  #     - GPU is auto-detected and used if available — falls back to CPU if not
+  #     - CPU inference is slower but works fine for small datasets (< 100 sequences)
+  #     - Recommended for large datasets (> 500 sequences) or no internet access
+  #
+  esm2_backend:      "local"
+
+  # Local ESM-2 batch size (only used if esm2_backend: local)
+  # Increase if you have a GPU with large VRAM (e.g. 32 for 16 GB GPU)
+  # Decrease if you run out of RAM on CPU (e.g. 4 for CPU with 8 GB RAM)
+  local_batch_size:  32
+
+  # Atlas API settings
+  esm_atlas_embed_url: "https://api.esmatlas.com/embedSequence/v1/"
+  retry_backoff:       [5, 15, 45]    # seconds between retries
+  request_timeout:     120            # seconds per request
+
+  # NCBI BLAST (for novelty check in M08)
+  ncbi_blast_url: "https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi"
+
+
+# ── Reference embedding database (M02b) ──────────────────────────────────────
+# Path to directory containing reference embedding sets built by:
+#   python scripts/build_reference_embeddings.py --output references/
+#
+# If the directory does not exist or is empty, Stage 3 identification is skipped
+# gracefully and the pipeline continues with HMMER + keyword results only.
+reference_db: "references"
+
+# Cosine similarity thresholds for Stage 3 identification
+# Higher = more specific (fewer false positives, more false negatives)
+# Lower  = more sensitive (more candidates but more noise)
+# Validated range from literature: 0.65–0.80 for ESM-2 650M
+reference_thresholds:
+  endolysin: 0.55
+  holin:     0.6
+  spanin:    0.6
+
+
+# ── Reporting (M09) ──────────────────────────────────────────────────────────
+reporting:
+  generate_candidate_reports: true   # per-endolysin markdown files
+  generate_umap_plot:         true   # 3-panel UMAP visualization

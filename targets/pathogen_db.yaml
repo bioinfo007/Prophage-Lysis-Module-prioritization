@@ -1,0 +1,101 @@
+# =============================================================================
+# Target Pathogen Database — prophage_lysis v2.0.0
+# =============================================================================
+# Defines PG chemotype per target pathogen for endolysin specificity scoring.
+#
+# PG chemotype options (must match keys in pg_database.py):
+#   gram_negative_dap            — Gram-negative, DAP-type PG (most gram-neg)
+#   gram_negative_dap_om_barrier — same, with outer membrane barrier flag
+#   gram_positive_lys            — Gram-positive, Lys-type PG (Streptococcus etc.)
+#   gram_positive_dap            — Gram-positive, DAP-type PG (Bacillus, Listeria)
+#
+# Add new targets via CLI:
+#   prophage_lysis add-target \
+#     --id "new_pathogen" \
+#     --name "Vibrio vulnificus" \
+#     --species "Vibrio vulnificus" \
+#     --gram-stain negative \
+#     --pg-chemotype gram_negative_dap_om_barrier \
+#     --aquaculture-host "oyster, sea bream" \
+#     --notes "emerging eel pathogen"
+# =============================================================================
+
+pathogens:
+
+  - id:               "vibrio_harveyi"
+    display_name:     "Vibrio harveyi"
+    species:          "Vibrio harveyi"
+    gram_stain:       "negative"
+    pg_chemotype:     "gram_negative_dap_om_barrier"
+    aquaculture_host: "olive flounder (Paralichthys olivaceus), shrimp, sea bass"
+    notes: >
+      Primary causative agent of vibriosis in marine aquaculture.
+      Dominant pathogen in Korean southeastern coastal aquaculture.
+      DAP-type PG; outer membrane barrier limits exogenous endolysin activity
+      without permeabilization (EDTA or phage tail spike co-treatment).
+    references:
+      - "Kim et al. (2020) J Fish Dis 43:789-797"
+      - "Pang et al. (2019) Front Microbiol 10:1477"
+
+  - id:               "vibrio_parahaemolyticus"
+    display_name:     "Vibrio parahaemolyticus"
+    species:          "Vibrio parahaemolyticus"
+    gram_stain:       "negative"
+    pg_chemotype:     "gram_negative_dap_om_barrier"
+    aquaculture_host: "shrimp, oyster, abalone (Haliotis discus hannai)"
+    notes: >
+      Major human pathogen via contaminated seafood; causes acute
+      hepatopancreatic necrosis disease (AHPND/EMS) in shrimp.
+      O3:K6 pandemic clone dominant in Korean coastal waters.
+    references:
+      - "Lee et al. (2018) Int J Food Microbiol 285:31-38"
+      - "Zhao et al. (2021) Front Microbiol 12:642831"
+
+  - id:               "streptococcus_parauberis"
+    display_name:     "Streptococcus parauberis"
+    species:          "Streptococcus parauberis"
+    gram_stain:       "positive"
+    pg_chemotype:     "gram_positive_lys"
+    aquaculture_host: "olive flounder (Paralichthys olivaceus), rockfish (Sebastes schlegelii)"
+    notes: >
+      Leading cause of streptococcosis in olive flounder farms in Korea.
+      No outer membrane — endolysins can access PG directly.
+      Lys-type PG: CHAP and amidase domains most active.
+      Responsible for major economic losses in Korean aquaculture annually.
+    references:
+      - "Kawanishi et al. (2014) Lett Appl Microbiol 58:528-534"
+      - "Shahi et al. (2019) Vet Microbiol 238:108416"
+
+  - id:               "edwardsiella_tarda"
+    display_name:     "Edwardsiella tarda"
+    species:          "Edwardsiella tarda"
+    gram_stain:       "negative"
+    pg_chemotype:     "gram_negative_dap_om_barrier"
+    aquaculture_host: >
+      Olive flounder (Paralichthys olivaceus), eel (Anguilla japonica),
+      sea bream (Pagrus major)
+    notes: >
+      Causes edwardsiellosis (hole-in-the-head disease) in flounder.
+      Multidrug-resistant strains emerging in Korean aquaculture.
+      Intracellular pathogen — cell-lytic strategy of endolysins may
+      require co-delivery or permeabilization.
+    references:
+      - "Mohanty & Sahoo (2007) Aquaculture 272:10-25"
+      - "Park et al. (2012) Dis Aquat Organ 101:27-35"
+
+  - id:               "aeromonas_hydrophila"
+    display_name:     "Aeromonas hydrophila"
+    species:          "Aeromonas hydrophila"
+    gram_stain:       "negative"
+    pg_chemotype:     "gram_negative_dap_om_barrier"
+    aquaculture_host: >
+      Freshwater fish, eel (Anguilla japonica), carp,
+      catfish — secondary aquaculture target
+    notes: >
+      Opportunistic pathogen causing motile Aeromonas septicemia (MAS).
+      Relevant for freshwater aquaculture integrated into Korean farms.
+      MDR strains with resistance to tetracycline, ampicillin, and
+      chloramphenicol documented in Korean freshwater fish farms.
+    references:
+      - "Rasmussen-Ivey et al. (2016) Front Microbiol 7:1337"
+      - "Kim et al. (2011) J Vet Sci 12:341-346"

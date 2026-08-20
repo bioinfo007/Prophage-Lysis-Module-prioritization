@@ -1,0 +1,11 @@
+candidate_id	genome_id	protein_id	function	category	start	end	strand	organism
+test_phage_001__lysin_001	test_phage_001	lysin_001	endolysin peptidoglycan hydrolase	lysis	1000	1480	+	test_phage_001
+test_phage_001__lysin_002	test_phage_001	lysin_002	endolysin N-acetylmuramidase	lysis	1500	1960	+	test_phage_001
+test_phage_001__holin_001	test_phage_001	holin_001	phage holin	lysis	900	1040	+	test_phage_001
+test_phage_001__holin_002	test_phage_001	holin_002	phage holin	lysis	850	1010	+	test_phage_001
+test_phage_001__spanin_001	test_phage_001	spanin_001	i-spanin Rz-like	lysis	1990	2220	+	test_phage_001
+test_phage_001__spanin_002	test_phage_001	spanin_002	o-spanin Rz1 lipoprotein	lysis	2240	2440	+	test_phage_001
+test_phage_001__orf_001	test_phage_001	orf_001	hypothetical protein	unknown function	100	400	+	test_phage_001
+test_phage_001__orf_002	test_phage_001	orf_002	major capsid protein	structural	420	850	+	test_phage_001
+test_phage_001__orf_003	test_phage_001	orf_003	tail fiber protein	structural	2500	2780	+	test_phage_001
+test_phage_001__orf_004	test_phage_001	orf_004	DNA polymerase	replication	2820	3600	+	test_phage_001

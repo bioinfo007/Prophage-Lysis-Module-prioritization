@@ -1,0 +1,47 @@
+name: prophage_lysis
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Workflow engine
+  - snakemake-minimal>=7.32
+
+  # Annotation tools
+  - pharokka>=1.4.0
+  - hmmer>=3.3.2
+
+  # Core scientific stack
+  - biopython>=1.81
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=2.0
+  - networkx>=3.1
+
+  # Clustering and dimensionality reduction
+  - umap-learn>=0.5.3
+  - hdbscan>=0.8.33
+  - scikit-learn>=1.3
+
+  # JIT compilation (CPU — GPU auto-detected at runtime if available)
+  - numba>=0.57
+
+  # Visualization
+  - matplotlib>=3.7
+
+  # CLI and utilities
+  - typer>=0.9
+  - pyyaml>=6.0
+  - tqdm>=4.65
+  - requests>=2.28
+
+# After conda env create + conda activate, run:
+#   pip install -e .
+#
+# For local ESM-2 backend (optional — default is Atlas REST API):
+#   pip install torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
+#   pip install fair-esm

@@ -1,0 +1,59 @@
+# SLURM cluster profile for prophage_lysis
+# Place in: workflow/profiles/slurm/config.yaml
+#
+# Usage:
+#   snakemake --profile workflow/profiles/slurm --configfile config/config.yaml
+#
+# The profile passes all Snakemake options automatically.
+# Adjust partition, account, and resource limits to your HPC centre.
+
+cluster: >
+  sbatch
+  --partition={resources.partition}
+  --mem={resources.mem_mb}M
+  --cpus-per-task={threads}
+  --time={resources.runtime}
+  --job-name=prophage_{rule}
+  --output=data/output/logs/slurm_{rule}_%j.out
+  --error=data/output/logs/slurm_{rule}_%j.err
+  {resources.gpu_flag}
+
+# Maximum concurrent jobs
+jobs: 50
+
+# Default resources (overridden per rule in Snakefile)
+default-resources:
+  - mem_mb=4000
+  - runtime=60
+  - partition=normal
+  - gpu_flag=""
+
+# Set GPU partition and flag for ESM-2 local embedding
+# Uncomment and set to your HPC's GPU partition name:
+# set-resources:
+#   esm2_embeddings:
+#     partition=gpu
+#     gpu_flag="--gres=gpu:1"
+#     mem_mb=48000
+#     runtime=360
+
+# Retry failed jobs up to 3 times (network errors, node failures)
+restart-times: 3
+
+# Wait for files to appear after cluster job completes
+latency-wait: 120
+
+# Keep going if a non-critical rule fails
+keep-going: true
+
+# Always re-run incomplete jobs (partial outputs)
+rerun-incomplete: true
+
+# Use conda environments per rule
+use-conda: true
+
+# Print shell commands for debugging
+printshellcmds: true
+
+# Snakemake scheduler
+scheduler: greedy

@@ -1,0 +1,92 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name        = "prophage_lysis"
+version     = "2.0.0"
+description = "Phenotype-guided, AI-driven discovery of prophage lysis modules from marine Vibrio species"
+readme      = "README.md"
+license     = { text = "MIT" }
+requires-python = ">=3.10"
+
+authors = [
+    { name = "Aqib" },
+]
+
+keywords = [
+    "prophage", "lysis", "endolysin", "holin", "spanin",
+    "marine microbiology", "aquaculture", "biocontrol",
+    "bioinformatics", "ESM-2", "protein language model",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: POSIX :: Linux",
+]
+
+dependencies = [
+    "biopython>=1.81",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "umap-learn>=0.5.3",
+    "hdbscan>=0.8.33",
+    "scikit-learn>=1.3",
+    "networkx>=3.1",
+    "numba>=0.57",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "requests>=2.28",
+    "typer>=0.9",
+    "snakemake>=7.32",
+]
+
+[project.optional-dependencies]
+# torch is installed separately via pip --index-url to control CPU vs CUDA build.
+# See INSTALL.md for instructions.
+local-esm = [
+    "fair-esm>=2.0.0",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "black>=23.0",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+prophage_lysis = "cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pipeline*"]
+
+
+
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+addopts      = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning:numba",
+]
+
+[tool.ruff]
+line-length = 100
+select      = ["E", "F", "W", "I"]
+ignore      = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.setuptools]
+py-modules = ["cli", "run_pipeline"]

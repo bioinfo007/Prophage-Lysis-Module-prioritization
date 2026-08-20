@@ -1,0 +1,11 @@
+name: prophage_hmmer
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - hmmer>=3.3.2
+  - biopython>=1.81
+  - pyyaml>=6.0
+  - tqdm>=4.65
