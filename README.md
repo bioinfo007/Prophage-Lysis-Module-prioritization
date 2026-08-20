@@ -1,6 +1,6 @@
-# prophage_lysis v2.0.0
+# prophage_lysis v1.0.0
 
-**Phenotype-Guided and AI-Driven Discovery of Prophage Lysis Modules from Marine-Derived *Vibrio* Species**
+**Phenotype-Guided and AI-Driven Discovery of Prophage Lysis Modules from Lactic acid bacteria Species**
 
 A Snakemake pipeline for mining endolysins, holins, and spanins from phage genome FASTAs using ESM-2 protein language model embeddings, UMAP+HDBSCAN clustering, and MaxMin diversity selection, with an active learning loop that re-ranks reserve candidates from wet lab activity data.
 
@@ -128,7 +128,7 @@ View default target pathogens:
 cat targets/pathogen_db.yaml
 ```
 
-Add a new target pathogen:
+Add a new target pathogen (e.g., vibrio_vulnificus):
 ```bash
 prophage_lysis add-target \
   --id "vibrio_vulnificus" \
@@ -232,7 +232,7 @@ pytest tests/ -v -m "not slow"
 
 If you use this pipeline, please cite:
 
-> [Authors]. Phenotype-guided and AI-driven discovery of prophage lysis modules from marine *Vibrio* species for aquaculture biocontrol. *[Journal]*, 2025.
+> [Author]
 
 ---
 
@@ -242,4 +242,4 @@ MIT License. See `LICENSE`.
 
 ## Contact
 
-Pukyong National University, Department of Marine Biotechnology, Busan, Korea.
+Pukyong National University, Busan, Korea.
